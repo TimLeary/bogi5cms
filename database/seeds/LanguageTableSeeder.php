@@ -1,8 +1,10 @@
-<?php namespace Modules\Stylerstaxonomy\Database\Seeders;
+<?php 
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Config;
+use App\Taxonomy;
+use App\Language;
 
 class LanguageTableSeeder extends Seeder {
 

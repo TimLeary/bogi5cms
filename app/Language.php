@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Language extends Model
 {
-    use SoftDeletes, ModelValidatorTrait;
+    use SoftDeletes;
     
     protected $fillable = ['iso_code'];
 
