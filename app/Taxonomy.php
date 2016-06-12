@@ -97,11 +97,6 @@ class Taxonomy extends Node
      */
 
     /**
-     * Model Validation rules for ModelValidatorTrait
-     */
-    protected $rules = [];
-
-    /**
      * Error Message for ModelValidatorTrait
      * 
      * @var Illuminate\Support\MessageBag

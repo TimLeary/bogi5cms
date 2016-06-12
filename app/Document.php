@@ -95,11 +95,7 @@ class Document extends Node
       to hook your own callbacks/observers into this events:
       http://laravel.com/docs/5.0/eloquent#model-events
      */
-
-    /**
-     * Model Validation rules for ModelValidatorTrait
-     */
-    protected $rules = [];
+    
 
     /**
      * Error Message for ModelValidatorTrait
