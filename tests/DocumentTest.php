@@ -48,4 +48,12 @@ class DocumentTest extends TestCase
         $link->save();
         $this->assertEquals($document->getDocumentLink(), $link->link);
     }
+
+    /**
+     * @test
+     */
+    public function it_could_be_navigation()
+    {
+        
+    }
 }

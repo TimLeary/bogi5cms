@@ -8,5 +8,11 @@ return [
         'german' => ['id' => 3, 'language_id' => 2, 'iso_code' => 'de'],
         'hungarian' => ['id' => 4, 'language_id' => 3, 'iso_code' => 'hu'],
     ],
-    'default_language' => 'english'
+    'default_language' => 'english',
+    'document_type' => 5,
+    'document_types' => [
+        'navigation' => 6,
+        'article_list' => 7,
+        'article' => 8
+    ]
 ];
