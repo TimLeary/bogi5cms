@@ -122,6 +122,19 @@ class Document extends Node
         return $this->hasOne(Taxonomy::class, 'id', 'type_taxonomy_id');
     }
 
+    public function links()
+    {
+        return $this->hasMany(DocumentLink::class, 'document_id', 'id');
+    }
+
+    public function getDocumentLink()
+    {
+        return DocumentLink::where('document_id','=', $this->id)
+            ->whereNull('language_id')
+            ->orWhere('language_id','=',Language::getDefaultLanguageId())
+            ->value('link');
+    }
+
     static public function getRoots() {
         return self::whereNull('parent_id')->get();
     }

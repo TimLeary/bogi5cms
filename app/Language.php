@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\DB;
 
 class Language extends Model
 {
@@ -19,5 +20,9 @@ class Language extends Model
     static public function getLanguageCodes($database = null) {
         $connection = is_null($database) ? \Illuminate\Support\Facades\DB::connection() : \Illuminate\Support\Facades\DB::connection($database);
         return $connection->table('languages')->lists('id', 'iso_code');
+    }
+
+    static public function getDefaultLanguageId() {
+        return DB::table('languages')->where('is_default', 1)->value('id');
     }
 }
