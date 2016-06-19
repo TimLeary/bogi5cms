@@ -20,4 +20,23 @@ class DescriptionTranslation extends Model
     {
         return $this->hasOne(Language::class, 'id', 'language_id');
     }
+
+    public function saveDescriptionTranslationsFromArray($descriptionTranslations, $descriptionId)
+    {
+        $languageCodes = Language::getLanguageCodes();
+        $defaultLanguageCode = Language::getDefaultLanguageCode();
+        unset($languageCodes[Language::getDefaultLanguageCode()]);
+
+        unset($descriptionTranslations[$defaultLanguageCode]);
+
+        if(!empty($descriptionTranslations)){
+            foreach ($descriptionTranslations as $languageCode => $translation) {
+                $newTranslation = new self;
+                $newTranslation->description_id = $descriptionId;
+                $newTranslation->language_id = $languageCodes[$languageCode];
+                $newTranslation->description = $translation;
+                $newTranslation->save();
+            }
+        }
+    }
 }

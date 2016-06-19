@@ -22,7 +22,15 @@ class Language extends Model
         return $connection->table('languages')->lists('id', 'iso_code');
     }
 
+    static public function getDefaultLanguageCode() {
+        return DB::table('languages')->where('is_default', 1)->value('iso_code');
+    }
+
     static public function getDefaultLanguageId() {
         return DB::table('languages')->where('is_default', 1)->value('id');
+    }
+
+    static public function getDefaultLanguage() {
+        return DB::table('languages')->where('is_default', 1)->first();
     }
 }
