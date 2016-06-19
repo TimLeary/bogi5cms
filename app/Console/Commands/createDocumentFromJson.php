@@ -58,7 +58,7 @@ class createDocumentFromJson extends Command
                 if(!empty($documentsData["descriptions"])){
                     $numDescriptions = count($documentsData["descriptions"]);
                     for($i = 0; $i < $numDescriptions; $i++){
-
+                        
                     }
                 }
             }

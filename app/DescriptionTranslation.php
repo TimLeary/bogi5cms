@@ -13,7 +13,7 @@ class DescriptionTranslation extends Model
     
     public function description()
     {
-        return $this->hasOne(Description::class);
+        return $this->hasOne(Description::class, 'id', 'description_id');
     }
     
     public function language()
