@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 use App\Description;
@@ -54,6 +52,10 @@ class DocumentTest extends TestCase
      */
     public function it_could_be_navigation()
     {
-        
+        $description = factory(Description::class)->create();
+        $document = new Document();
+        $document->name_description_id = $description->id;
+        $document->type_taxonomy_id = \Illuminate\Support\Facades\Config::get('taxonimies.navigation');
+        $this->assertTrue($document->save());
     }
 }
