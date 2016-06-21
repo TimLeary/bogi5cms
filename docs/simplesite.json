@@ -7,7 +7,11 @@
     "descriptions" : [],
     "type" : "navigation",
     "is_active" : true,
-    "parent_id" : null
+    "parent_id" : null,
+    "languages" : [
+      "en",
+      "hu"
+    ]
   },
   {
     "id" : 2,
@@ -33,7 +37,11 @@
     ],
     "type" : "article",
     "is_active" : true,
-    "parent_id" : 1
+    "parent_id" : 1,
+    "languages" : [
+      "en",
+      "hu"
+    ]
   },
   {
     "id" : 3,
@@ -52,7 +60,11 @@
     ],
     "type" : "article",
     "is_active" : true,
-    "parent_id" : 1
+    "parent_id" : 1,
+    "languages" : [
+      "en",
+      "hu"
+    ]
   },
   {
     "id" : 4,
@@ -78,7 +90,11 @@
     ],
     "type" : "article",
     "is_active" : true,
-    "parent_id" : 3
+    "parent_id" : 3,
+    "languages" : [
+      "en",
+      "hu"
+    ]
   },
   {
     "id" : 5,
@@ -104,6 +120,10 @@
     ],
     "type" : "article",
     "is_active" : true,
-    "parent_id" : 3
+    "parent_id" : 3,
+    "languages" : [
+      "en",
+      "hu"
+    ]
   }
 ]
