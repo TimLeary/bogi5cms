@@ -61,4 +61,30 @@ class DescriptionTest extends TestCase
         $descriptionTranslation->save();
         $this->assertEquals($description->translations[0]->description, $translate);
     }
+
+    /**
+     * @test
+     */
+    public function it_can_be_saved_with_translation_from_an_array()
+    {
+        $defaultLanguageCode = \App\Language::getDefaultLanguageCode();
+
+        $descriptionArray = [
+            $defaultLanguageCode => $this->faker->sentence,
+            Config::get('taxonomies.languages.german.iso_code') => $this->faker->sentence
+        ];
+
+        $descId = (new Description())->saveDescriptionsFromArray($descriptionArray);
+
+        $description = Description::find($descId);
+
+        $this->assertEquals(
+            $description->description,
+            $descriptionArray[$defaultLanguageCode]
+        );
+        $this->assertEquals(
+            $description->translations[0]->description,
+            $descriptionArray[Config::get('taxonomies.languages.german.iso_code')]
+        );
+    }
 }
