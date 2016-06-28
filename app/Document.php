@@ -135,6 +135,11 @@ class Document extends Node
             ->value('link');
     }
 
+    public function getNames()
+    {
+        return $this->name()->descriptionsArray;
+    }
+
     static public function getRoots() {
         return self::whereNull('parent_id')->get();
     }

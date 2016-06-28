@@ -36,4 +36,11 @@ class Description extends Model
             throw new ValidationException('Description has not value in default language');
         }
     }
+
+    public static function getDescriptionsArrayById($id)
+    {
+        $defaultLanguage = Language::getDefaultLanguage();
+        $defaultLanguageCode = $defaultLanguage->iso_code;
+        $description = self::find($id);
+    }
 }
